@@ -1,33 +1,14 @@
 var express = require('express')
 
 var app = express()
+var routes = require('./routes')
 
 app.set('view engine', 'ejs')
+app.locals.pagetitle = "Pablo's Website"
 
-app.get('/', function(request, response) {
-	response.render('default')
-})
-
-app.get('/me', function(request, response) {
-	response.send('@pportabales')
-})
-
-app.get('/who/:name?', function(request, response) {
-	console.log(request.params)
-	var name = request.params.name
-	response.send(name + ' was here')
-})
-
-app.get('/who/:name?/:title?', function(request, response) {
-	console.log(request.params)
-	var name = request.params.name
-	var title = request.params.title
-	response.send('name: ' + name + ' title: ' + title)
-})
-
-app.get('*', function(request, response) {
-	response.send('bad route')
-})
+app.get('/', routes.index)
+app.get('/about', routes.about)
+app.get('*', function(request, response) { response.send('bad route') })
 
 
 
