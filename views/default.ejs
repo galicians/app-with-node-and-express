@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>My app</title>
+</head>
+<body>
+	<h1>Threading</h1>
+	<p>
+	
+Traditional Web-serving techniques require each connection (request) to create a new thread, taking up system RAM and eventually maxing-out at the amount of RAM available. Node.js is different. It operates on a single-thread, using non-blocking I/O calls, allowing it to support tens of thousands of concurrent connections, without worrying about RAM limitations and the cost of context-switching between threads. The design of sharing a single-thread between all the requests means it can be used to build highly concurrent applications. The design goal of a Node.js application is that any function performing an I/O must use a callback.
+	</p>
+</body>
+</html>
